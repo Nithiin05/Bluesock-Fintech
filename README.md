@@ -21,7 +21,7 @@ This project was built as part of an internship at **Bluestock Fintech** with ou
 
 ## 🔧 My Role
 
-I worked mainly on the **backend side** —  
+I worked mainly on the **backend side** 
 - Setting up Express routes  
 - Connecting to MongoDB  
 - Creating RESTful APIs  
