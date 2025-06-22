@@ -1,0 +1,750 @@
+<style>
+    .upcoming-ipo-section {
+      background-color: #f6f5f5;
+      display: flex;
+      padding-bottom: 415px;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    @media (max-width: 991px) {
+      .upcoming-ipo-section {
+        padding-bottom: 100px;
+      }
+    }
+    
+    .header {
+      background-color: #fff;
+      display: flex;
+      width: 100%;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 55px 7px;
+    }
+    
+    @media (max-width: 991px) {
+      .header {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .nav-container {
+      display: flex;
+      align-items: center;
+      gap: 37px;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-container {
+        max-width: 100%;
+      }
+    }
+    
+    .logo-container {
+      align-self: stretch;
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+    
+    .logo-wrapper {
+      gap: 20px;
+      display: flex;
+    }
+    
+    @media (max-width: 991px) {
+      .logo-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    
+    .logo-image {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 33%;
+      margin-left: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .logo-image {
+        width: 100%;
+      }
+    }
+    
+    .logo {
+      aspect-ratio: 1.12;
+      object-fit: contain;
+      object-position: center;
+      width: 132px;
+      max-width: 100%;
+      flex-grow: 1;
+    }
+    
+    @media (max-width: 991px) {
+      .logo {
+        margin-top: 8px;
+      }
+    }
+    
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 67%;
+      margin-left: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .brand-name {
+        width: 100%;
+      }
+    }
+    
+    .brand-title {
+      color: #1e1e1e;
+      margin-top: 36px;
+      font: 700 45px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .brand-title {
+        margin-top: 40px;
+        font-size: 40px;
+      }
+    }
+    
+    .nav-links {
+      align-self: stretch;
+      display: flex;
+      gap: 33px;
+      color: #9a9a9a;
+      white-space: nowrap;
+      margin: auto 0;
+      font: 600 15px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .nav-links {
+        white-space: initial;
+      }
+    }
+    
+    .media-link {
+      align-self: stretch;
+      display: flex;
+      gap: 7px;
+      color: #9a9a9a;
+      white-space: nowrap;
+      margin: auto 0;
+      font: 600 15px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .media-link {
+        white-space: initial;
+      }
+    }
+    
+    .dropdown-icon {
+      aspect-ratio: 2;
+      object-fit: contain;
+      object-position: center;
+      width: 8px;
+      align-self: start;
+      margin-top: 5px;
+    }
+    
+    .support-link {
+      align-self: stretch;
+      display: flex;
+      gap: 11px;
+      color: #9a9a9a;
+      white-space: nowrap;
+      margin: auto 0;
+      font: 600 15px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .support-link {
+        white-space: initial;
+      }
+    }
+    
+    .support-dropdown {
+      aspect-ratio: 2;
+      object-fit: contain;
+      object-position: center;
+      width: 10px;
+      align-self: start;
+      margin-top: 5px;
+    }
+    
+    .auth-container {
+      display: flex;
+      gap: 40px 70px;
+      margin: auto 0;
+      font: 600 15px Poppins, sans-serif;
+    }
+    
+    .auth-buttons {
+      display: flex;
+      gap: 32px;
+    }
+    
+    .sign-in {
+      color: #9a9a9a;
+      margin: auto 0;
+    }
+    
+    .sign-up {
+      background-color: #3f52ff;
+      color: #fff;
+      padding: 10px 22px;
+    }
+    
+    @media (max-width: 991px) {
+      .sign-up {
+        padding-left: 20px;
+      }
+    }
+    
+    .menu-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 25px;
+      margin: auto 0;
+    }
+    
+    .main-content {
+      display: flex;
+      margin-top: 19px;
+      width: 100%;
+      flex-direction: column;
+      padding: 0 63px;
+    }
+    
+    @media (max-width: 991px) {
+      .main-content {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+    
+    .breadcrumb {
+      align-self: start;
+      display: flex;
+      gap: 4px;
+      color: #000;
+      font: 400 12px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .breadcrumb {
+        margin-left: 9px;
+      }
+    }
+    
+    .breadcrumb-link {
+      color: #00f;
+    }
+    
+    .breadcrumb-item {
+      display: flex;
+      gap: 2px;
+    }
+    
+    .page-title {
+      color: #000;
+      align-self: start;
+      margin-top: 13px;
+      font: 600 32px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .page-title {
+        margin-left: 5px;
+      }
+    }
+    
+    .page-description {
+      color: #000;
+      align-self: start;
+      font: 300 14px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .page-description {
+        max-width: 100%;
+      }
+    }
+    
+    .ipo-list {
+      margin-top: 55px;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-list {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .ipo-row {
+      gap: 20px;
+      display: flex;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    
+    .ipo-card {
+      border-radius: 10px;
+      background-color: #fff;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 61px 34px;
+      border: 1px solid #414bea;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-card {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+    
+    .ipo-header {
+      align-self: start;
+      display: flex;
+      gap: 40px 46px;
+      color: #414bea;
+      font: 500 24px Poppins, sans-serif;
+    }
+    
+    .ipo-logo {
+      aspect-ratio: 2.34;
+      object-fit: contain;
+      object-position: center;
+      width: 110px;
+      max-width: 100%;
+    }
+    
+    .ipo-name {
+      align-self: start;
+      margin-top: 10px;
+      flex-basis: auto;
+      border: 1px solid #414bea;
+    }
+    
+    .ipo-details {
+      margin-top: 73px;
+      width: 100%;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-details {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .ipo-details-row {
+      gap: 20px;
+      display: flex;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-details-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    
+    .ipo-details-left {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 72%;
+      margin-left: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-details-left {
+        width: 100%;
+      }
+    }
+    
+    .ipo-details-container {
+      display: flex;
+      flex-grow: 1;
+      gap: 7px;
+      font-family: Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-details-container {
+        margin-top: 40px;
+      }
+    }
+    
+    .ipo-details-column {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .ipo-details-item {
+      display: flex;
+      padding-left: 5px;
+      flex-direction: column;
+      align-items: start;
+      font-size: 18px;
+      color: #5a5858;
+      font-weight: 400;
+    }
+    
+    .ipo-detail-label {
+      align-self: stretch;
+      border: 1px solid #414bea;
+    }
+    
+    .ipo-detail-value {
+      color: #000;
+      font-weight: 600;
+      margin-top: 9px;
+      border: 1px solid #414bea;
+    }
+    
+    .ipo-detail-button {
+      border-radius: 10px;
+      background-color: #fff;
+      font-size: 22px;
+      color: #414bea;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 5px 31px;
+      border: 1px solid #414bea;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-detail-button {
+        margin-right: 3px;
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+    
+    .ipo-details-right {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 28%;
+      margin-left: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-details-right {
+        width: 100%;
+      }
+    }
+    
+    .ipo-dates {
+      display: flex;
+      flex-direction: column;
+      color: #5a5858;
+      font: 400 18px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-dates {
+        margin-top: 40px;
+      }
+    }
+    
+    .ipo-date-label {
+      align-self: start;
+      border: 1px solid #414bea;
+    }
+    
+    .ipo-date-value {
+      color: #000;
+      font-weight: 600;
+      margin-top: 9px;
+      border: 1px solid #414bea;
+    }
+    
+    @media (max-width: 991px) {
+      .ipo-date-value {
+        margin-right: 7px;
+      }
+    }
+    
+    .faq-section {
+      color: #000;
+      align-self: start;
+      margin-top: 168px;
+      font: 500 40px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .faq-section {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .faq-description {
+      color: #000;
+      align-self: start;
+      font: 400 24px Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .faq-description {
+        max-width: 100%;
+      }
+    }
+    
+    .faq-container {
+      border-radius: 10px;
+      background-color: #fff;
+      display: flex;
+      margin-top: 111px;
+      width: 100%;
+      max-width: 1774px;
+      flex-direction: column;
+      font-family: Poppins, sans-serif;
+      font-weight: 600;
+      padding: 43px 63px 88px;
+    }
+    
+    @media (max-width: 991px) {
+      .faq-container {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+    
+    .faq-header {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    @media (max-width: 991px) {
+      .faq-header {
+        max-width: 100%;
+      }
+    }
+    
+    .faq-question {
+      color: #000;
+      font-size: 30px;
+    }
+    
+    .faq-toggle {
+      color: #5c8bfe;
+      font-size: 48px;
+      align-self: start;
+    }
+    
+    @media (max-width: 991px) {
+      .faq-toggle {
+        font-size: 40px;
+      }
+    }
+    
+    .faq-answer {
+      color: #000;
+      font-size: 24px;
+      align-self: start;
+      margin-top: 70px;
+    }
+    
+    @media (max-width: 991px) {
+      .faq-answer {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .faq-item {
+      border-radius: 10px;
+      background-color: #fff;
+      display: flex;
+      margin-top: 36px;
+      width: 100%;
+      max-width: 1774px;
+      align-items: start;
+      gap: 20px;
+      font-family: Poppins, sans-serif;
+      font-weight: 600;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 43px 72px 105px;
+    }
+    
+    @media (max-width: 991px) {
+      .faq-item {
+        max-width: 100%;
+        padding: 0 20px 100px;
+      }
+    }
+    <style>
+    .footer-placeholder {
+      background-color: #fff;
+      align-self: center;
+      margin-top: 379px;
+      width: 1713px;
+      max-width: 100%;
+      color: #000;
+      padding: 84px 70px;
+      font: 500 83px/0.3 Poppins, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .footer-placeholder {
+        max-width: 100%;
+        font-size: 40px;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+    </style>
+    <section class="upcoming-ipo-section">
+      <header class="header">
+        <nav class="nav-container">
+          <div class="logo-container">
+            <div class="logo-wrapper">
+              <div class="logo-image">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c241377aed330faae0ec4333af7f446275ee4790e790fdbc718ca3c1ed3f6757?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" class="logo" alt="Bluestock logo" />
+              </div>
+              <div class="brand-name">
+                <h1 class="brand-title">BLUESTOCK</h1>
+              </div>
+            </div>
+          </div>
+          <ul class="nav-links">
+            <li>PRODUCTS</li>
+            <li>PRICING</li>
+            <li>COMMUNITY</li>
+          </ul>
+          <div class="media-link">
+            <span>MEDIA</span>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/da48a75239a3aa91c1482ebe97f6a35dbca9b4e571b52149b1b8442ba56d92c2?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" class="dropdown-icon" alt="Media dropdown" />
+          </div>
+          <div class="support-link">
+            <span>SUPPORT</span>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5769fc224bb8138c808d0203d9ad38be650ae43ba1de0c6e5f06f15d81896547?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" class="support-dropdown" alt="Support dropdown" />
+          </div>
+        </nav>
+        <div class="auth-container">
+          <div class="auth-buttons">
+            <button class="sign-in">Sign In</button>
+            <button class="sign-up">Sign Up Now</button>
+          </div>
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b1f5f5f56baf715521df65fd83686747512fd854bcb2ece5c9bde9cd21fee3b?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" class="menu-icon" alt="Menu" />
+        </div>
+      </header>
+    
+      <main class="main-content">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+          <a href="#" class="breadcrumb-link">Bluestock</a>
+          <span>&gt;</span>
+          <div class="breadcrumb-item">
+            <a href="#" class="breadcrumb-link">IPO</a>
+            <span>&gt;</span>
+            <span>UPCOMING IPO</span>
+          </div>
+        </nav>
+        <h2 class="page-title">Upcoming IPO</h2>
+        <p class="page-description">Companies that have filled for an IPO with SEBI. Few details might be disclosed by the companies later.</p>
+    
+        <div class="ipo-list">
+          <div class="ipo-row">
+            <article class="ipo-card">
+              <header class="ipo-header">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/953b9a0e6f3011fe80ee20bc03cf4d0c5c7ef939b490eb7a1b3d9dc81ad68c70?placeholderIfAbsent=true&apiKey=bef3b09fbe8c4f3dba8952f0f78e8aec" class="ipo-logo" alt="Nova Agritech Ltd. logo" />
+                <h3 class="ipo-name">Nova Agritech Ltd.</h3>
+              </header>
+              <div class="ipo-details">
+                <div class="ipo-details-row">
+                  <div class="ipo-details-left">
+                    <div class="ipo-details-container">
+                      <div class="ipo-details-column">
+                        <div class="ipo-details-item">
+                          <span class="ipo-detail-label">PRICE BAND</span>
+                          <span class="ipo-detail-value">Rs 39 - 41</span>
+                          <span class="ipo-detail-label">ISSUE SIZE</span>
+                          <span class="ipo-detail-value">143.81 Cr.</span>
+                        </div>
+                        <button class="ipo-detail-button">RHP</button>
+                      </div>
+                      <div class="ipo-details-column">
+                        <div class="ipo-details-item">
+                          <span class="ipo-detail-label">OPEN</span>
+                          <span class="ipo-detail-value">2024-01-22</span>
+                          <span class="ipo-detail-label">ISSUE TYPE</span>
+                          <span class="ipo-detail-value">Book Built</span>
+                        </div>
+                        <button class="ipo-detail-button">DRHP</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ipo-details-right">
+                    <div class="ipo-dates">
+                      <span class="ipo-date-label">CLOSE</span>
+                      <span class="ipo-date-value">2024-01-24</span>
+                      <span class="ipo-date-label">LISTING DATE</span>
+                      <span class="ipo-date-value">2024-01-30</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- Repeat similar structure for other IPO cards -->
+          </div>
+        </div>
+    
+        <section class="faq-section">
+          <h2>Frequently Asked Questions?</h2>
+          <p class="faq-description">Find answers to common questions that come in your mind related to IPO.</p>
+          <div class="faq-container">
+            <div class="faq-header">
+              <h3 class="faq-question">How to Subscribe to an IPO?</h3>
+              <button class="faq-toggle" aria-expanded="true" aria-controls="faq-answer-1">-</button>
+            </div>
+            <p id="faq-answer-1" class="faq-answer">
+              Step 1: Login to your respective service provider.<br />
+              Step 2: Click on the IPO button.<br />
+              Step 3: Select the IPO you want to bid and enter the relevant details.<br />
+              Step 4: Your subscription will be completed once you make the payment or give permission.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Should I buy an IPO first day?</h3>
+            <button class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-2">+</button>
+          </div>
+          <!-- Repeat similar structure for other FAQ items -->
+        </section>
+      </main>
+    
+      <footer class="footer-placeholder">
+        Add / Extend Footer
+      </footer>
+    </section>

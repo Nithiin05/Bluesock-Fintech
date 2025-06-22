@@ -1,0 +1,23 @@
+{
+  "name": "bluestock_fintech",
+  "version": "1.0.0",
+  "description": "Bluestock Fintech backend application using Express and Mongoose.",
+  "main": "Blue.js",
+  "scripts": {
+    "start": "node Blue.js",
+    "dev": "nodemon Blue.js",
+    "test": "echo \"No test specified\" && exit 1"
+  },
+  "author": "NIKAM",
+  "license": "ISC",
+  "keywords": ["fintech", "express", "mongoose", "backend"],
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.21.0",
+    "fontawesome-icon": "^1.0.4",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

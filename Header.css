@@ -1,0 +1,120 @@
+.header {
+  background-color: #fff;
+  box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  padding: 28px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.logoImage {
+  width: 85px;
+  height: auto;
+}
+
+.logoText {
+  color: #1e1e1e;
+  font: 700 45px Poppins, sans-serif;
+}
+
+.navigation {
+  flex-grow: 1;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem,
+.navDropdown {
+  color: #9a9a9a;
+  font: 600 15px Poppins, sans-serif;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.navDropdown {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownIcon {
+  width: 10px;
+  height: auto;
+  margin-left: 5px;
+}
+
+.newBadge {
+  background-color: #3f52ff;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  margin-left: 5px;
+}
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  font: 600 15px Poppins, sans-serif;
+}
+
+.signIn {
+  color: #9a9a9a;
+  text-decoration: none;
+}
+
+.signUpNow {
+  background-color: #3f52ff;
+  color: #fff;
+  padding: 10px 34px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menuIcon {
+  width: 25px;
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 20px;
+  }
+
+  .logoText {
+    font-size: 40px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .userActions {
+    gap: 20px;
+  }
+
+  .signUpNow {
+    padding: 10px 20px;
+  }
+}

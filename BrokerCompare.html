@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrokerMatch - Compare Brokers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .compare-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #ffffff;
+      width: 100%;
+      padding: 20px 40px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand-logo {
+      width: 65px;
+    }
+
+    .brand-name {
+      font-size: 28px;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .nav-menu, .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-item, .user-btn {
+      font-size: 14px;
+      color: #606060;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .signup-btn {
+      padding: 8px 20px;
+      background-color: #3d5afe;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    .broker-comparison-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .sidebar-menu {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .sidebar-item {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #2457c5;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .broker-card {
+      flex: 1;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .broker-logo {
+      width: 100px;
+    }
+
+    .broker-name {
+      margin-top: 10px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .broker-score {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .cta-btn {
+      background-color: #28a9a6;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .vs-text {
+      font-size: 22px;
+      font-weight: 700;
+      color: #555;
+      align-self: center;
+    }
+
+    .chart-img, .table-section, .pros-cons, .rating-section {
+      margin-top: 60px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: #2457c5;
+      color: #fff;
+    }
+
+    th, td {
+      padding: 16px;
+      text-align: left;
+      border: 1px solid #ccc;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    .pros-cons-wrapper {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .pros, .cons {
+      flex: 1;
+    }
+
+    .pros-cons-item {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .rating-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center;
+      flex: 1;
+    }
+
+    .rating-score {
+      font-size: 40px;
+      font-weight: bold;
+      color: #000;
+      margin: 10px 0;
+    }
+
+    .financials-placeholder {
+      height: 200px;
+      background-color: #eee;
+      margin-top: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .broker-comparison-header {
+        flex-direction: column;
+      }
+
+      .pros-cons-wrapper {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="compare-wrapper">
+    <header>
+      <div class="top-bar">
+        <div class="brand-section">
+          <img src="logo.png" alt="Logo" class="brand-logo">
+          <span class="brand-name">BrokerMatch</span>
+        </div>
+        <div class="nav-menu">
+          <span class="nav-item">Home</span>
+          <span class="nav-item">Compare</span>
+          <span class="nav-item">Insights</span>
+        </div>
+        <div class="user-actions">
+          <span class="user-btn">Sign In</span>
+          <button class="signup-btn">Register</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="broker-comparison-header">
+        <div class="sidebar-menu">
+          <div class="sidebar-item">📊 Active Clients</div>
+          <div class="sidebar-item">💸 Charges</div>
+          <div class="sidebar-item">❗ Complaints</div>
+          <div class="sidebar-item">📈 Share Holding</div>
+          <div class="sidebar-item">✅ Pros & Cons</div>
+          <div class="sidebar-item">⭐ Ratings</div>
+          <div class="sidebar-item">💰 Financials</div>
+        </div>
+
+        <div class="broker-card">
+          <img src="angel-logo.png" alt="Angel One" class="broker-logo">
+          <div class="broker-name">Angel One</div>
+          <div class="broker-score">4.7</div>
+          <button class="cta-btn">Open Account</button>
+        </div>
+
+        <div class="vs-text">VS</div>
+
+        <div class="broker-card">
+          <img src="zerodha-logo.png" alt="Zerodha" class="broker-logo">
+          <div class="broker-name">Zerodha</div>
+          <div class="broker-score">4.6</div>
+          <button class="cta-btn">Open Account</button>
+        </div>
+      </div>
+
+      <div class="chart-img">
+        <img src="chart-placeholder.png" width="100%" alt="Chart">
+      </div>
+
+      <div class="table-section">
+        <div class="section-title">Account Opening and AMC</div>
+        <table>
+          <thead>
+            <tr><th>Type</th><th>Angel One</th><th>Zerodha</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Opening Charges</td><td>Free</td><td>₹200</td></tr>
+            <tr><td>AMC</td><td>₹0 (1st Year)</td><td>₹300/year</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-section">
+        <div class="section-title">Brokerage Charges</div>
+        <table>
+          <thead>
+            <tr><th>Segment</th><th>Angel One</th><th>Zerodha</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Intraday</td><td>₹20 or 0.25%</td><td>₹20 or 0.03%</td></tr>
+            <tr><td>Futures</td><td>₹20 or 0.25%</td><td>₹20 or 0.03%</td></tr>
+            <tr><td>Options</td><td>₹20/trade</td><td>₹20/trade</td></tr>
+            <tr><td>Delivery</td><td>Free</td><td>Free</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pros-cons">
+        <div class="section-title">Pros & Cons</div>
+        <div class="pros-cons-wrapper">
+          <div class="pros">
+            <div class="pros-cons-item">✅ Zero account charges 1st year</div>
+            <div class="pros-cons-item">✅ Flat ₹20 for F&O</div>
+          </div>
+          <div class="cons">
+            <div class="pros-cons-item">❌ ₹20 per trade via call</div>
+            <div class="pros-cons-item">❌ UI not beginner-friendly</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rating-section">
+        <div class="section-title">Ratings</div>
+        <div class="pros-cons-wrapper">
+          <div class="rating-card">
+            <img src="angel-logo.png" class="broker-logo">
+            <div class="rating-score">4.7</div>
+            <ul>
+              <li>Trust</li>
+              <li>Ease of Use</li>
+              <li>Tech</li>
+            </ul>
+          </div>
+          <div class="rating-card">
+            <img src="zerodha-logo.png" class="broker-logo">
+            <div class="rating-score">4.6</div>
+            <ul>
+              <li>Trust</li>
+              <li>Ease of Use</li>
+              <li>Tech</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="financials-placeholder">
+        Financial chart placeholder
+      </div>
+
+    </main>
+  </section>
+</body>
+</html>
